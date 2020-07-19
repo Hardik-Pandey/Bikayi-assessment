@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nobel Prize Winners</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/select.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script defer type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+
+<nav class="app-nav">
+    <h1 class="app-title">Nobel Prize Winners</h1>
+</nav>
+
+<div class="content">
+    <section class="flex select-form-container" id="prize-filter">
+        <div class="select">
+            <select id="category-select" class="category-select">
+                <option selected disabled value="-1">Select Category</option>
+                <option value="0">Chemistry</option>
+                <option value="1">Economics</option>
+                <option value="2">Literature</option>
+                <option value="3">Peace</option>
+                <option value="4">Physics</option>
+                <option value="5">Medicine</option>
+                <option value="6">Multiple Nobel Laureates</option>
+            </select>
+        </div>
+        <div id="input-year" class="input-year">
+            <div class="year-input-description">Year (between 1900 - 2018)</div>
+            <input type="number" id="year-input" class="year-input" placeholder="Year" value="2017" max="2017">
+        </div>
+
+        <button type="submit" id="submit-btn" class="submit-btn" onclick="showDetails(document.getElementById('category-select').value, document.getElementById('year-input').value)">
+            Show
+        </button>
+    </section>
+
+    <div id="loader-view" style="display: none;">
+        <section class="loader-container">
+            <span class="loader"></span>
+        </section>
+    </div>
+
+    <section class="prize-list-container" id="prize-list-container">
+        <div id="prize-year-category">
+            <h1 id="category-selected" class="category-selected"></h1>
+            <h3 id="year-selected" class="year-selected"></h3>
+        </div>
+
+        <ol id="prize-list" class="prize-list"></ol>
+    </section>
+</div>
+
+</body>
+</html>
